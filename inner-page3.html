@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="Nilanjan Das" content="webdev: rivudas.ind@gmail.com" />
+    <title>Aesthetic Interior Design</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        .highlight-interior {
+            color: #FFA500; /* Orange color for Modern Interior Design */
+            font-weight: bold;
+        }
+        .highlight-premium {
+            color: #FFD700;
+            /* Golden color for premium */
+            font-weight: bold;
+        }
+
+        .highlight-normal {
+            color: #4682B4;
+            /* Steel blue color for normal */
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Khush Inside</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+
+        </div>
+    </nav>
+
+
+    <!-- Contact-->
+
+    <section class="page-section" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Aesthetic Interior Design for Small Room Order Page</h2>
+            </div>
+
+            <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                <input type="hidden" name="access_key" value="e971f15e-8283-40dd-b08c-8bf2e4037ba4">
+                <div class="row align-items-stretch mb-5 justify-content-center">
+                    <div class="col-md-6 text-center">
+                        <div class="form-group">
+                            <!-- Name input -->
+                            <input type="text" class="form-control text-center" id="name" name="name"
+                                placeholder="Your Name *" required>
+                            <div class="invalid-feedback">Please provide your name.</div>
+                        </div>
+                        <div class="form-group">
+                            <!-- Email address input -->
+                            <input type="email" class="form-control text-center" id="email" name="email"
+                                placeholder="Your Email *" required>
+                            <div class="invalid-feedback">Please provide a valid email address.</div>
+                        </div>
+                        <div class="form-group mb-md-0">
+                            <!-- Phone number input -->
+                            <input type="tel" class="form-control text-center" id="phone" name="phone"
+                                placeholder="Your Phone *" required>
+                            <div class="invalid-feedback">Please provide your phone number.</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Checkbox inputs -->
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Aesthetic Interior Design for Small Room" id="checkboxInterior" name="checkboxGroup">
+                    <label class="form-check-label highlight-interior" for="checkboxInterior">Aesthetic Interior Design for Small Room</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Premium" id="checkboxPremium" name="checkboxGroup">
+                    <label class="form-check-label highlight-premium" for="checkboxPremium">Premium</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="Normal" id="checkboxNormal" name="checkboxGroup">
+                    <label class="form-check-label highlight-normal" for="checkboxNormal">Normal</label>
+                </div>
+                <!-- Submit Button-->
+                <div class="text-center">
+                    <button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit">Send
+                        Message</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const interiorCheckbox = document.getElementById('checkboxInterior');
+            const premiumCheckbox = document.getElementById('checkboxPremium');
+            const normalCheckbox = document.getElementById('checkboxNormal');
+            const submitButton = document.getElementById('submitButton');
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const phoneInput = document.getElementById('phone');
+
+            submitButton.addEventListener('click', function (event) {
+                event.preventDefault(); // Prevent form submission
+
+                // Check if Aesthetic Interior Design for Small Room checkbox is checked
+                const interiorChecked = interiorCheckbox.checked;
+
+                // Check if either Premium or Normal checkbox is checked
+                const premiumChecked = premiumCheckbox.checked;
+                const normalChecked = normalCheckbox.checked;
+
+                // Check if Aesthetic Interior Design for Small Room checkbox and either Premium or Normal checkbox are both selected
+                if (!interiorChecked || !(premiumChecked || normalChecked)) {
+                    alert('Please select Aesthetic Interior Design for Small Room and either Premium or Normal.');
+                    return;
+                }
+
+                // Check if all text fields are filled out
+                if (!nameInput.value || !emailInput.value || !phoneInput.value) {
+                    alert('Please fill out all required fields.');
+                    return;
+                }
+
+                // Proceed with form submission if all conditions are met
+                document.getElementById('contactForm').submit();
+            });
+
+            // Event listener to ensure only one of Premium or Normal checkbox can be selected at a time
+            premiumCheckbox.addEventListener('change', function () {
+                if (premiumCheckbox.checked) {
+                    normalCheckbox.checked = false;
+                }
+            });
+
+            normalCheckbox.addEventListener('change', function () {
+                if (normalCheckbox.checked) {
+                    premiumCheckbox.checked = false;
+                }
+            });
+        });
+    </script>
+
+
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-4 text-lg-start">Copyright &copy; Your Website 2023</div>
+                <div class="col-lg-4 my-3 my-lg-0">
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Twitter"><i
+                            class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="Facebook"><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!" aria-label="LinkedIn"><i
+                            class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a class="link-dark text-decoration-none me-3" href="#!">Privacy Policy</a>
+                    <a class="link-dark text-decoration-none" href="#!">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>-->
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+</html>
